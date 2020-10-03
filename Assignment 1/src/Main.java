@@ -1,4 +1,6 @@
-import java.nio.charset.Charset;
+/*Jessie Lazo ID: 017165640
+CECS 378 Sec 11
+02 October 2020*/
 import java.util.*;
 
 public class Main {
@@ -33,8 +35,6 @@ public class Main {
         for(int i = 0; i < alphabet.length(); i++){
             keyMap.put(alphabet.charAt(i), key[i]);
         }
-        System.out.println("KeyMap formatted as follows: ");
-        System.out.println(keyMap);
         for(int i = 0; i < plaintext.length(); i++){
             //to retain formatting only perform substitution to alphabetical characters
             if(Character.isAlphabetic(plaintext.charAt(i))){
@@ -78,16 +78,37 @@ public class Main {
 
 
     public static void main(String args[]){
+        String first = "He who fights with monsters should look to it that he himself does " +
+                "not become a monster . And if you gaze long into an abyss , the abyss " +
+                "also gazes into you .";
+        String second = "There is a theory which states that if ever anybody discovers " +
+                "exactly what the Universe is for and why it is here , it will " +
+                "instantly disappear and be replaced by something even more bizarre " +
+                "and inexplicable . There is another theory which states that this " +
+                "has already happened.";
+        String third = "Whenever I find myself growing grim about the mouth ; whenever it is " +
+                "a damp , drizzly November in my soul ; whenever I find myself " +
+                "involuntarily pausing before coffin warehouses , and bringing up the " +
+                "rear of every funeral I meet ; and especially whenever my hypos get " +
+                "such an upper hand of me , that it requires a strong moral principle " +
+                "to prevent me from deliberately stepping into the street , and " +
+                "methodically knocking people ’ s hats off - then , I account it high " +
+                "time to get to sea as soon as I can .";
+        ArrayList<String> phrases = new ArrayList<String>();
+        phrases.add(first);
+        phrases.add(second);
+        phrases.add(third);
         String[] key = createKey();
         System.out.print("Randomly generated key: ");
         for(String c : key){
             System.out.print(c);
         }
         System.out.println("");
-        String cipher = myEncrypt("hello there", key);
-        String decode = decrypt(cipher, key);
-
-        System.out.println("Ciphertext: " + cipher);
-        System.out.println("Plaintext: " + decode);
+        for(String s : phrases){
+            String cText = myEncrypt(s.toLowerCase(), key);
+            System.out.println("Ciphertext: " + cText);
+            String pText = decrypt(cText, key);
+            System.out.println("Plaintext: " + pText);
+        }
     }
 }
