@@ -1,6 +1,3 @@
-/*Jessie Lazo ID: 017165640
-CECS 378 Sec 11
-02 October 2020*/
 import java.util.*;
 
 public class Main {
