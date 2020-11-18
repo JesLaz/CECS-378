@@ -1,5 +1,5 @@
-#Jessie Lazo ID:017165640
-#CECS 378 Sec 11
+#Jessie Lazo 
+#CECS 378 
 
 #Personal filePath of Ultima5\SAVED.GAM
 #filePath = "C:\Users\JeLaz\OneDrive\Desktop\GAMES\Ultima5\SAVED.GAM"
